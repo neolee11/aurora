@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aurora Web", "Aurora Web\Au
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aurora Web.Tests", "Aurora Web.Tests\Aurora Web.Tests.csproj", "{91674A5E-6AAC-4BFC-8154-1FB3F67422DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{D8FEA010-57DD-497F-966C-18E3F70485E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D2909D0F-4452-4C4B-BA1B-BA61C97FB26A}"
+	ProjectSection(SolutionItems) = preProject
+		Project Features.txt = Project Features.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +28,10 @@ Global
 		{91674A5E-6AAC-4BFC-8154-1FB3F67422DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91674A5E-6AAC-4BFC-8154-1FB3F67422DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91674A5E-6AAC-4BFC-8154-1FB3F67422DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8FEA010-57DD-497F-966C-18E3F70485E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8FEA010-57DD-497F-966C-18E3F70485E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8FEA010-57DD-497F-966C-18E3F70485E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8FEA010-57DD-497F-966C-18E3F70485E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
