@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Project Features.txt = Project Features.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{94552800-3869-4302-8D20-33556A06E550}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{D8FEA010-57DD-497F-966C-18E3F70485E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8FEA010-57DD-497F-966C-18E3F70485E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8FEA010-57DD-497F-966C-18E3F70485E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94552800-3869-4302-8D20-33556A06E550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94552800-3869-4302-8D20-33556A06E550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94552800-3869-4302-8D20-33556A06E550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94552800-3869-4302-8D20-33556A06E550}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
