@@ -1,10 +1,12 @@
 Database Features:
 Tables:
 1. Customer 
-2. Address
-3. CreditCard
-4. CreditCardType
-5. Product
-6. Category
-7. ShoppingCart
+2. SystemAdmin
+3. Address
+4. CreditCard
+5. CreditCardType
+
+6. Product
+7. Category
+
 8. Order 

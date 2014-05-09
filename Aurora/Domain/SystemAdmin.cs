@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Customer : User
+    public class SystemAdmin : User
     {
         public int Id { get; set; }
-        public Address ShippingAddress { get; set; }
-        public string? Phone { get; set; }
-        public DateTime DateJoined { get; set; }
+        public string AdminEmail { get; set; }
     }
 }

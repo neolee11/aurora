@@ -96,6 +96,10 @@
       <Project>{673B4A8D-15C9-4D34-9E29-1E2670A5FF4D}</Project>
       <Name>Aurora Web</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{94552800-3869-4302-8d20-33556a06e550}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

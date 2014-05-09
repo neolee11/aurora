@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Customer : User
+    public class CustomerOrder
     {
         public int Id { get; set; }
-        public Address ShippingAddress { get; set; }
-        public string? Phone { get; set; }
-        public DateTime DateJoined { get; set; }
+        public int UserId { get; set; }
+        public List<PurchaseItem> Items { get; set; }
     }
 }
