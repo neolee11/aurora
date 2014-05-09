@@ -10,7 +10,7 @@ namespace Domain
     {
         public int Id { get; set; }
         public Address ShippingAddress { get; set; }
-        public string? Phone { get; set; }
+        public bool? IsMarried { get; set; } //This is to test ? in EF Db creation
         public DateTime DateJoined { get; set; }
     }
 }

@@ -20,8 +20,6 @@ namespace Domain
             {
                 return string.Format("{0}, {1}, {2}, {3}", Street, City, State, Zip);
             }
-
-            private set;
         }
     }
 }
