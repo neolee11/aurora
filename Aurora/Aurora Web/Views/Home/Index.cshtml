@@ -2,8 +2,29 @@
     ViewBag.Title = "Home Page";
 }
 
+<script type="text/javascript">
+    //alert("hello");
+    var myTimer;
+
+    window.onload = function () {
+        document.getElementById("testTag").innerHTML = 'hello';
+
+        //myTimer = setInterval(
+        //    function () { processTime(); },
+        //    3000
+        //    );
+    }
+    
+    function processTime() {
+        alert("Timer elapsed");
+        clearInterval(myTimer);
+    }
+    
+</script>
+
 <div class="jumbotron">
     <b>This is Aurora</b>
+    <span id="testTag">test</span>
 </div>
 
 <div class="row">
