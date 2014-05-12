@@ -74,6 +74,8 @@ namespace Domain.Tests.ShoppingCart_Tests
             var productCount = cart.Items.Find(p => p.Product.Id == productSameAsExistingOne.Id).Quantity;
 
             Assert.AreEqual(2, productCount);
+            //StringAssert.
+            //CollectionAssert
         }
 
         [TestMethod]
