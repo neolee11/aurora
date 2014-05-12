@@ -11,7 +11,47 @@ namespace Domain
     /// </summary>
     public class ShoppingCart
     {
-        public int Id { get; set; }
-        public List<PurchaseItem> Items { get; set; }
+        private List<PurchaseItem> _items;
+        public List<PurchaseItem> Items
+        {
+            get
+            {
+                return _items;
+            }
+        }
+
+        public ShoppingCart()
+        {
+            _items = new List<PurchaseItem>();
+        }
+
+        public void Add(Product product)
+        {
+            var thisProductInCart = _items.Where(p => p.Product.Id == product.Id).SingleOrDefault();
+
+            if (thisProductInCart == null)
+            {
+                var purchaseItem = new PurchaseItem()
+                {
+                    Product = product,
+                    Quantity = 1
+                };
+
+                _items.Add(purchaseItem);
+            }
+            else
+            {
+                thisProductInCart.Quantity++;
+            }
+
+        }
+
+        public void Add(Product product, int quantity)
+        {
+            for(int i = 0; i < quantity; i++)
+            {
+                Add(product);
+            }
+        }
     }
 }
