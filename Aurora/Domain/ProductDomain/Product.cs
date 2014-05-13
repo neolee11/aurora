@@ -13,5 +13,17 @@ namespace Domain.ProductDomain
         public string Description { get; set; }
         public Category Category { get; set; }
         public Decimal Price { get; set; }
+
+        public Product Clone()
+        {
+            return new Product()
+            {
+                Id = Id,
+                Name = Name,
+                Description = Description,
+                Category = this.Category.Clone(),
+                Price = Price
+            };
+        }
     }
 }

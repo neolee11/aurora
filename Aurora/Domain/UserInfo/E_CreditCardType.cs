@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.UserInfo
 {
-    public enum CreditCardType
+    public enum E_CreditCardType
     {
         Unknown = 0,
         Visa,

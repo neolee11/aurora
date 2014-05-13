@@ -10,5 +10,10 @@ namespace Domain.ProductDomain
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public Category Clone()
+        {
+            return new Category() { Id = Id, Name = Name };
+        }
     }
 }

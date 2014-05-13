@@ -1,4 +1,5 @@
 ﻿using Domain.ProductDomain;
+using Domain.Shopping;
 using Domain.UserInfo;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Domain.Tests
 {
     public static class Mother
     {
-        public static Customer Get1Customer()
+        public static Customer GetCustomer1()
         {
             return new Customer
             {
@@ -20,7 +21,36 @@ namespace Domain.Tests
                 Username = "tomli",
                 DateJoined = new DateTime(2014, 5, 1),
                 IsMarried = true,
-                ShippingAddress = Get1Address()
+                ShippingAddress = Get1Address(),
+                CreditCards = GetCreditCards()
+            };
+        }
+
+        public static List<CreditCard> GetCreditCards()
+        {
+            var cards = new List<CreditCard>();
+            cards.Add(GetCreditCard1());
+            cards.Add(GetCreditCard2());
+            return cards;
+        }
+
+        public static CreditCard GetCreditCard1()
+        {
+            return new CreditCard()
+            {
+                Id = 1,
+                Number = "012345",
+                CardType = E_CreditCardType.Visa
+            };
+        }
+
+        public static CreditCard GetCreditCard2()
+        {
+            return new CreditCard()
+            {
+                Id = 2,
+                Number = "9876512",
+                CardType = E_CreditCardType.Master
             };
         }
 
@@ -97,6 +127,23 @@ namespace Domain.Tests
                 Id = 3,
                 Name = "Phone"
             };
+        }
+
+        public static  CustomerOrder GetCustomerOrder1()
+        {
+            var cart = new ShoppingCart();
+            cart.Add(Mother.GetProduct1(), 3);
+            cart.Add(Mother.GetProduct2(), 2);
+
+            var buyer = Mother.GetCustomer1();
+            var shippingMethod = new StandardShipping();
+
+            return new CustomerOrder(
+                cart.Items,
+                shippingMethod,
+                buyer,
+                buyer.CreditCards[0]
+            );
         }
     }
 }

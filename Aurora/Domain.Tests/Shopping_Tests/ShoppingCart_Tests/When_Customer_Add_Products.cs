@@ -17,7 +17,7 @@ namespace Domain.Tests.Shopping_Tests.ShoppingCart_Tests
         [TestInitialize]
         public void SetupTest()
         {
-            _customer = Mother.Get1Customer();
+            _customer = Mother.GetCustomer1();
         }
 
         //[ExpectedException]

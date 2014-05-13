@@ -40,10 +40,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProductDomain\ProductManager.cs" />
+    <Compile Include="Shopping\E_OrderStatus.cs" />
     <Compile Include="Shopping\ShoppingManager.cs" />
     <Compile Include="UserInfo\Address.cs" />
     <Compile Include="ProductDomain\Category.cs" />
-    <Compile Include="UserInfo\CreditCardType.cs" />
+    <Compile Include="UserInfo\E_CreditCardType.cs" />
     <Compile Include="UserInfo\Customer.cs" />
     <Compile Include="UserInfo\CreditCard.cs" />
     <Compile Include="Shopping\CustomerOrder.cs" />

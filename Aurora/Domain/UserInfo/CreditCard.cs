@@ -9,10 +9,17 @@ namespace Domain.UserInfo
     public class CreditCard
     {
         public int Id { get; set; }
-     
-        public string CC_Num { get; set; }
-        public CreditCardType CC_Type { get; set; }
-
-        //public int CustomerId { get; set; } //Owner of the credit card
+        public string Number { get; set; }
+        public E_CreditCardType CardType { get; set; }
+        public decimal TotalChargedAmount { get; set; }
+        
+        /// <summary>
+        /// Charge current credit card
+        /// </summary>
+        /// <param name="amount">Amount less than 0 represents a refund</param>
+        public void Charge(decimal amount)
+        {
+            TotalChargedAmount += amount;
+        }
     }
 }
