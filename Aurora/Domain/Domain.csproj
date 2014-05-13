@@ -43,13 +43,17 @@
     <Compile Include="Category.cs" />
     <Compile Include="CreditCardType.cs" />
     <Compile Include="Customer.cs" />
-    <Compile Include="CustomerCreditCard.cs" />
+    <Compile Include="CreditCard.cs" />
     <Compile Include="CustomerOrder.cs" />
+    <Compile Include="IShippingMethod.cs" />
+    <Compile Include="OvernightShipping.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShoppingCart.cs" />
     <Compile Include="ShoppingCartItem.cs" />
+    <Compile Include="StandardShipping.cs" />
     <Compile Include="SystemAdmin.cs" />
+    <Compile Include="ThreeDayShipping.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

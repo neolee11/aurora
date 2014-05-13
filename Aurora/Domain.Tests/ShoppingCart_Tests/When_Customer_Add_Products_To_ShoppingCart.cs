@@ -89,7 +89,19 @@ namespace Domain.Tests.ShoppingCart_Tests
             Assert.AreEqual(3, productCount);
         }
 
+        [TestMethod]
+        public void Add_product_to_filled_cart_should_increment_the_total_price()
+        {
+            var cart = new ShoppingCart();
+            var existingProduct = Mother.Get1Product();
+            cart.Add(existingProduct);
 
+            var newProduct = Mother.Get2ndProduct();
+
+            var expectedTotalPrice = existingProduct.Price + newProduct.Price;
+
+
+        }
 
         [ClassCleanup]
         public static void TearDown()

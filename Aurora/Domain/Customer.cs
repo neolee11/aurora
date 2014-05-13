@@ -12,5 +12,7 @@ namespace Domain
         public Address ShippingAddress { get; set; }
         public bool? IsMarried { get; set; } //This is to test ? in EF Db creation
         public DateTime DateJoined { get; set; }
+
+        public List<CreditCard> CreditCards { get; set; }
     }
 }
