@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Domain.ProductDomain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Shopping
 {
     /// <summary>
     /// This is a tempoary type for current user selected items. It's not saved into database

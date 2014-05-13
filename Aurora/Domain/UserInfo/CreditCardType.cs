@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.UserInfo
 {
-    public interface IShippingMethod
+    public enum CreditCardType
     {
-        decimal CalculatePrice();
+        Unknown = 0,
+        Visa,
+        Master,
+        AmEx
     }
 }

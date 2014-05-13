@@ -61,7 +61,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Product_Tests\" />
+    <Folder Include="Product_Tests\Category_Tests\" />
+    <Folder Include="Product_Tests\Product_Tests\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

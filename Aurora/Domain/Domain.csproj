@@ -39,23 +39,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
-    <Compile Include="Category.cs" />
-    <Compile Include="CreditCardType.cs" />
-    <Compile Include="Customer.cs" />
-    <Compile Include="CreditCard.cs" />
-    <Compile Include="CustomerOrder.cs" />
-    <Compile Include="IShippingMethod.cs" />
-    <Compile Include="OvernightShipping.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="UserInfo\Address.cs" />
+    <Compile Include="ProductDomain\Category.cs" />
+    <Compile Include="UserInfo\CreditCardType.cs" />
+    <Compile Include="UserInfo\Customer.cs" />
+    <Compile Include="UserInfo\CreditCard.cs" />
+    <Compile Include="Shopping\CustomerOrder.cs" />
+    <Compile Include="Shipping\IShippingMethod.cs" />
+    <Compile Include="Shipping\OvernightShipping.cs" />
+    <Compile Include="ProductDomain\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShoppingCart.cs" />
-    <Compile Include="ShoppingCartItem.cs" />
-    <Compile Include="StandardShipping.cs" />
-    <Compile Include="SystemAdmin.cs" />
-    <Compile Include="ThreeDayShipping.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Shopping\ShoppingCart.cs" />
+    <Compile Include="Shopping\ShoppingCartItem.cs" />
+    <Compile Include="Shipping\StandardShipping.cs" />
+    <Compile Include="UserInfo\SystemAdmin.cs" />
+    <Compile Include="Shipping\ThreeDayShipping.cs" />
+    <Compile Include="UserInfo\User.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.UserInfo
 {
-    public class CustomerOrder
+    public class SystemAdmin : User
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public List<PurchaseItem> Items { get; set; }
+        public string AdminEmail { get; set; }
     }
 }

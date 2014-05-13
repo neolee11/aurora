@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Shipping
 {
-    public class StandardShipping : IShippingMethod
+    public class ThreeDayShipping : IShippingMethod
     {
-        private decimal _rate = 2.00m;
+        private decimal _rate = 5.00m;
 
         public decimal CalculatePrice()
         {

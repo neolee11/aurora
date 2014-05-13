@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain.ProductDomain;
+using Domain.UserInfo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

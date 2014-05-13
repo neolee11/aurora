@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Shopping
 {
-    public class Category
+    public class CustomerOrder
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public int UserId { get; set; }
+        public List<PurchaseItem> Items { get; set; }
     }
 }
