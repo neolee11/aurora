@@ -36,7 +36,7 @@ namespace Domain.Tests
             };
         }
 
-        public static Product Get1Product()
+        public static Product GetProduct1()
         {
             return new Product()
             {
@@ -48,7 +48,7 @@ namespace Domain.Tests
             };
         }
 
-        public static Product Get2ndProduct()
+        public static Product GetProduct2()
         {
             return new Product()
             {
@@ -57,6 +57,18 @@ namespace Domain.Tests
                 Category = GetComputerCategory(),
                 Description = "Lenovo Laptop Computer",
                 Price = 899.99m
+            };
+        }
+
+        public static Product GetProduct3()
+        {
+            return new Product()
+            {
+                Id = 3,
+                Name = "Cisco Phone 7945",
+                Category = GetComputerCategory(),
+                Description = "Cisco IP Phone",
+                Price = 95.00m
             };
         }
 
@@ -75,6 +87,15 @@ namespace Domain.Tests
             {
                 Id = 2,
                 Name = "Computer"
+            };
+        }
+
+        public static Category GetPhoneCategory()
+        {
+            return new Category()
+            {
+                Id = 3,
+                Name = "Phone"
             };
         }
     }

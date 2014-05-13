@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Domain.Shopping
 {
-    public class ThreeDayShipping : IShippingMethod
+    public class ShoppingManager
     {
-        private decimal _rate = 5.00m;
+        public ShoppingCart ShoppingCart { get; set; }
 
-        public decimal CalculatePrice()
+        public void CheckOut()
         {
-            return _rate;
+
         }
     }
-
 }

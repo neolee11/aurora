@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProductDomain\ProductManager.cs" />
+    <Compile Include="Shopping\ShoppingManager.cs" />
     <Compile Include="UserInfo\Address.cs" />
     <Compile Include="ProductDomain\Category.cs" />
     <Compile Include="UserInfo\CreditCardType.cs" />
