@@ -11,7 +11,15 @@ namespace Domain.Shopping
     {
         #region Properties
         public int Id { get; set; }
-        public int UserId { get; set; }
+
+        public int UserId
+        {
+            get
+            {
+                return _customer.Id;
+            }
+        }
+
         public List<PurchaseItem> Items { get; set; }
         public E_OrderStatus Status
         {
@@ -57,12 +65,20 @@ namespace Domain.Shopping
                 return _chargingCreditCard;
             }
         }
+
+        public Customer Customer
+        {
+            get
+            {
+                return _customer;
+            }
+        }
         #endregion
 
         #region Private Members
 
         private IShippingMethod _shippingMethod;
-        private Customer _buyer;
+        private Customer _customer;
         private CreditCard _chargingCreditCard;
         private E_OrderStatus _status;
         #endregion
@@ -73,9 +89,14 @@ namespace Domain.Shopping
             orderItems.ForEach(i => Items.Add(i.Clone()));
 
             _shippingMethod = shippingMethod;
-            _buyer = buyer;
+            _customer = buyer;
             _chargingCreditCard = buysCreditCard;
+        }
+
+        public void Process()
+        {
             _status = E_OrderStatus.Processing;
+            ChargeCreditCard();
         }
 
         public void Ship()
@@ -93,13 +114,13 @@ namespace Domain.Shopping
             }
         }
 
-        public void ChargeCreditCard()
+        private void ChargeCreditCard()
         {
             if (_chargingCreditCard != null)
                 _chargingCreditCard.Charge(TotalPrice);
         }
 
-        public void RefundCreditCard()
+        private void RefundCreditCard()
         {
             if (_chargingCreditCard != null)
                 _chargingCreditCard.Charge(-TotalPrice);

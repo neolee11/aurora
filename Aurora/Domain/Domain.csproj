@@ -40,7 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProductDomain\ProductManager.cs" />
+    <Compile Include="Shopping\CheckOutSetting.cs" />
     <Compile Include="Shopping\E_OrderStatus.cs" />
+    <Compile Include="Shopping\OrderManager.cs" />
     <Compile Include="Shopping\ShoppingManager.cs" />
     <Compile Include="UserInfo\Address.cs" />
     <Compile Include="ProductDomain\Category.cs" />
@@ -48,15 +50,15 @@
     <Compile Include="UserInfo\Customer.cs" />
     <Compile Include="UserInfo\CreditCard.cs" />
     <Compile Include="Shopping\CustomerOrder.cs" />
-    <Compile Include="Shopping\IShippingMethod.cs" />
-    <Compile Include="Shopping\OvernightShipping.cs" />
+    <Compile Include="Shopping\Shipping\IShippingMethod.cs" />
+    <Compile Include="Shopping\Shipping\OvernightShipping.cs" />
     <Compile Include="ProductDomain\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shopping\ShoppingCart.cs" />
-    <Compile Include="Shopping\ShoppingCartItem.cs" />
-    <Compile Include="Shopping\StandardShipping.cs" />
+    <Compile Include="Shopping\PurchaseItem.cs" />
+    <Compile Include="Shopping\Shipping\StandardShipping.cs" />
     <Compile Include="UserInfo\SystemAdmin.cs" />
-    <Compile Include="Shopping\ThreeDayShipping.cs" />
+    <Compile Include="Shopping\Shipping\ThreeDayShipping.cs" />
     <Compile Include="UserInfo\User.cs" />
   </ItemGroup>
   <ItemGroup />
