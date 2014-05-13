@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Shipping
+namespace Domain.ProductDomain
 {
-    public interface IShippingMethod
+    public class ProductManager
     {
-        decimal CalculatePrice();
+        public List<Product> Products { get; set; }
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Tests.ShoppingCart_Tests
+namespace Domain.Tests.Shopping_Tests.ShoppingCart_Tests
 {
     [TestClass]
     public class When_Customer_Add_Products_To_ShoppingCart

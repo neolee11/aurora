@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Shipping
+namespace Domain.Shopping
 {
     public class ThreeDayShipping : IShippingMethod
     {
