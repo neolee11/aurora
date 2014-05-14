@@ -111,7 +111,14 @@ namespace Domain.Shopping
 
             return _items.Where(i => i.Product.Id == productId).Single().Quantity;
         }
+
+        public bool IsEmpty()
+        {
+            return _items.Count == 0;
+        }
         #endregion
+
+
         
     }
 }

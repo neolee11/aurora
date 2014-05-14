@@ -6,6 +6,7 @@ namespace Domain.Tests.ProductDomain_Tests.ProductManager_Tests
     [TestClass]
     public class When_Search_Products
     {
+
         [TestMethod]
         public void TestMethod1()
         {

@@ -75,6 +75,11 @@
     <Folder Include="UserInfo_Tests\Customer_Tests\" />
     <Folder Include="UserInfo_Tests\SystemAdmin_Tests\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Shopping_Tests\ShoppingCart_Tests\TestData.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

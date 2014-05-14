@@ -10,5 +10,16 @@ namespace Domain.Tests.ProductDomain_Tests.ProductManager_Tests
         public void TestMethod1()
         {
         }
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+        }
+
+        [TestCleanup]
+        public void TestCleanUp()
+        {
+
+        }
     }
 }

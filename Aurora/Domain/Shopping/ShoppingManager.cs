@@ -44,6 +44,9 @@ namespace Domain.Shopping
         {
             try
             {
+                if (_shoppingCart.IsEmpty())
+                    return false;
+
                 if (SetPayingCreditCard(checkoutSetting.CreditCardId) == false)
                     return false;
 
