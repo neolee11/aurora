@@ -34,7 +34,7 @@ namespace Domain.Tests.Shopping_Tests.CustomerOrder_Tests
             var order = Mother.GetCustomerOrder1();
             order.Process();
 
-            Assert.AreEqual(E_OrderStatus.Processing, order.Status);
+            Assert.AreEqual(EOrderStatus.Processing, order.Status);
         }
 
         [TestMethod]

@@ -21,7 +21,7 @@ namespace Domain.Shopping
         }
 
         public List<PurchaseItem> Items { get; set; }
-        public E_OrderStatus Status
+        public EOrderStatus Status
         {
             get
             {
@@ -80,7 +80,7 @@ namespace Domain.Shopping
         private IShippingMethod _shippingMethod;
         private Customer _customer;
         private CreditCard _chargingCreditCard;
-        private E_OrderStatus _status;
+        private EOrderStatus _status;
         #endregion
 
         public CustomerOrder(List<PurchaseItem> orderItems, IShippingMethod shippingMethod, Customer buyer, CreditCard buysCreditCard)
@@ -95,21 +95,21 @@ namespace Domain.Shopping
 
         public void Process()
         {
-            _status = E_OrderStatus.Processing;
+            _status = EOrderStatus.Processing;
             ChargeCreditCard();
         }
 
         public void Ship()
         {
-            _status = E_OrderStatus.Shipped;
+            _status = EOrderStatus.Shipped;
         }
 
         public void Cancel()
         {
             //Only allow cancel when the order is in processing state
-            if (_status == E_OrderStatus.Processing)
+            if (_status == EOrderStatus.Processing)
             {
-                _status = E_OrderStatus.Cancelled;
+                _status = EOrderStatus.Cancelled;
                 RefundCreditCard();
             }
         }

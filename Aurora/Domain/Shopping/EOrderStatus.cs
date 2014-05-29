@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.Shopping
+﻿namespace Domain.Shopping
 {
-    public enum E_OrderStatus
+    public enum EOrderStatus
     {
         Unknown = 0, //unknown state
         Processing, //order in processing state

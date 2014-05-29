@@ -1,4 +1,5 @@
 ﻿using System;
+using Domain.ProductDomain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain.Shopping;
 
@@ -14,7 +15,7 @@ namespace Domain.Tests.Shopping_Tests.CustomerOrder_Tests
             order.Process();
             order.Cancel();
 
-            Assert.AreEqual(E_OrderStatus.Cancelled, order.Status);
+            Assert.AreEqual(EOrderStatus.Cancelled, order.Status);
         }
 
         [TestMethod]
@@ -26,7 +27,7 @@ namespace Domain.Tests.Shopping_Tests.CustomerOrder_Tests
 
             order.Cancel();
 
-            Assert.AreEqual(E_OrderStatus.Shipped, order.Status);
+            Assert.AreEqual(EOrderStatus.Processing, order.Status);
         }
     }
 }

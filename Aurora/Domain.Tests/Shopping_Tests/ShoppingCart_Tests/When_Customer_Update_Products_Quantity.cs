@@ -27,7 +27,7 @@ namespace Domain.Tests.Shopping_Tests.ShoppingCart_Tests
             var product = Mother.GetProduct1();
             cart.Add(product);
 
-            var quantity = 4;
+            var quantity = 3;
             cart.UpdateProductQuantity(product.Id, quantity);
 
             var actualResult = cart.GetProductQuantity(product.Id);

@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="ProductDomain\ProductManager.cs" />
     <Compile Include="Shopping\CheckOutSetting.cs" />
-    <Compile Include="Shopping\E_OrderStatus.cs" />
+    <Compile Include="Shopping\EOrderStatus.cs" />
     <Compile Include="Shopping\OrderManager.cs" />
     <Compile Include="Shopping\ShoppingManager.cs" />
     <Compile Include="UserInfo\Address.cs" />
