@@ -1,9 +1,9 @@
-﻿using System;
-using Domain.Shopping.Shipping;
+﻿using Aurora.Core.Models.ShoppingModels;
+using Aurora.Core.Services;
+using Aurora.Engine.Shipping;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Domain.Shopping;
 
-namespace Domain.Tests.Shopping_Tests.CustomerOrder_Tests
+namespace Aurora.Core.Tests.Model_Tests.CustomerOrder_Tests
 {
     [TestClass]
     public class When_Create_Order
@@ -35,7 +35,7 @@ namespace Domain.Tests.Shopping_Tests.CustomerOrder_Tests
             var order = Mother.GetCustomerOrder1();
             order.Process();
 
-            Assert.AreEqual(EOrderStatus.Processing, order.Status);
+            Assert.AreEqual((object) EOrderStatus.Processing, order.Status);
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace Domain.Tests.Shopping_Tests.CustomerOrder_Tests
 
             order.Process();
 
-            Assert.AreEqual(beforedAmount + orderPrice, card.TotalChargedAmount);
+            Assert.AreEqual((object) (beforedAmount + orderPrice), card.TotalChargedAmount);
         }
         
     }

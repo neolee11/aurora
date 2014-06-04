@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace Domain.Shopping
 {
     /// <summary>
-    /// This is a tempoary type for current user selected items. It's not saved into database
     /// </summary>
     public class ShoppingCart
     {
@@ -44,7 +43,7 @@ namespace Domain.Shopping
         #region Add
         public void Add(Product product)
         {
-            var thisProductInCart = _items.Where(p => p.Product.Id == product.Id).SingleOrDefault();
+            var thisProductInCart = _items.SingleOrDefault(p => p.Product.Id == product.Id);
 
             if (thisProductInCart == null)
             {
@@ -53,7 +52,7 @@ namespace Domain.Shopping
                     Product = product,
                     Quantity = 1
                 };
-
+                
                 _items.Add(purchaseItem);
             }
             else
@@ -65,12 +64,15 @@ namespace Domain.Shopping
 
         public void Add(Product product, int quantity)
         {
-            for (int i = 0; i < quantity; i++)
+            for (var i = 0; i < quantity; i++)
             {
                 Add(product);
+
             }
         }
         #endregion
+
+
 
         #region Remove
         public void Remove(int productId)
@@ -119,6 +121,6 @@ namespace Domain.Shopping
         #endregion
 
 
-        
+
     }
 }

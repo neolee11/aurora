@@ -1,4 +1,5 @@
-﻿using Domain.UserInfo;
+﻿using Domain.Shopping.Shipping;
+using Domain.UserInfo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Shopping
 {
-    public class ShoppingManager
+    public class ShoppingService
     {
         #region Private Members
         private ShoppingCart _shoppingCart;
@@ -17,6 +18,7 @@ namespace Domain.Shopping
         #endregion
 
         #region Properties
+
         public ShoppingCart ShoppingCart
         {
             get
@@ -32,9 +34,10 @@ namespace Domain.Shopping
                 return _customer;
             }
         }
+
         #endregion
 
-        public ShoppingManager(Customer customer)
+        public ShoppingService(Customer customer)
         {
             _customer = customer;
             _shoppingCart = new ShoppingCart();
@@ -50,6 +53,7 @@ namespace Domain.Shopping
                 if (SetPayingCreditCard(checkoutSetting.CreditCardId) == false)
                     return false;
 
+
                 SetShippingMethod(checkoutSetting.ShippingMethod);
 
                 var order = new CustomerOrder(
@@ -57,7 +61,7 @@ namespace Domain.Shopping
                     _shippingMethod,
                     _customer,
                     _chargingCreditCard
-                );
+                    );
 
                 order.Process();
                 return true;

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domain.ProductDomain;
-using Domain.Shopping;
-using Domain.Shopping.Shipping;
-using Domain.UserInfo;
+using Aurora.Core.Models.ProductModels;
+using Aurora.Core.Models.UserModels;
+using Aurora.Core.Services;
+using Aurora.Engine.Shipping;
 
-namespace Domain.Tests
+namespace Aurora.Core.Tests
 {
     public static class Mother
     {
@@ -34,7 +34,7 @@ namespace Domain.Tests
 
         public static CreditCard GetCreditCard1()
         {
-            return new CreditCard
+            return new CreditCard()
             {
                 Id = 1,
                 Number = "012345",
@@ -44,7 +44,7 @@ namespace Domain.Tests
 
         public static CreditCard GetCreditCard2()
         {
-            return new CreditCard
+            return new CreditCard()
             {
                 Id = 2,
                 Number = "9876512",
@@ -54,7 +54,7 @@ namespace Domain.Tests
 
         public static Address Get1Address()
         {
-            return new Address
+            return new Address()
             {
                 Id = 1,
                 Street = "East Street",
@@ -66,7 +66,7 @@ namespace Domain.Tests
 
         public static Product GetProduct1()
         {
-            return new Product
+            return new Product()
             {
                 Id = 1,
                 Name = "Sony A7",
@@ -78,7 +78,7 @@ namespace Domain.Tests
 
         public static Product GetProduct2()
         {
-            return new Product
+            return new Product()
             {
                 Id = 2,
                 Name = "Lenovo Y400",
@@ -90,7 +90,7 @@ namespace Domain.Tests
 
         public static Product GetProduct3()
         {
-            return new Product
+            return new Product()
             {
                 Id = 3,
                 Name = "Cisco Phone 7945",
@@ -102,7 +102,7 @@ namespace Domain.Tests
 
         public static Category GetCameraCategory()
         {
-            return new Category
+            return new Category()
             {
                 Id = 1,
                 Name = "Camera"
@@ -111,7 +111,7 @@ namespace Domain.Tests
 
         public static Category GetComputerCategory()
         {
-            return new Category
+            return new Category()
             {
                 Id = 2,
                 Name = "Computer"
@@ -120,20 +120,20 @@ namespace Domain.Tests
 
         public static Category GetPhoneCategory()
         {
-            return new Category
+            return new Category()
             {
                 Id = 3,
                 Name = "Phone"
             };
         }
 
-        public static CustomerOrder GetCustomerOrder1()
+        public static  CustomerOrder GetCustomerOrder1()
         {
             var cart = new ShoppingCart();
-            cart.Add(GetProduct1(), 3);
-            cart.Add(GetProduct2(), 2);
+            cart.Add(Mother.GetProduct1(), 3);
+            cart.Add(Mother.GetProduct2(), 2);
 
-            Customer buyer = GetCustomer1();
+            var buyer = Mother.GetCustomer1();
             var shippingMethod = new StandardShipping();
 
             return new CustomerOrder(
@@ -141,7 +141,7 @@ namespace Domain.Tests
                 shippingMethod,
                 buyer,
                 buyer.CreditCards[0]
-                );
+            );
         }
     }
 }

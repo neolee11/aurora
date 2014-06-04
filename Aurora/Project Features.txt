@@ -1,18 +1,29 @@
-Database Features:
-Tables:
-1. Customer 
-2. SystemAdmin
-3. Address
-4. CreditCard
-5. CreditCardType
+ECommerce Site 
+Front end: web, phone
 
-6. Product
-7. Category
+The site should :
 
-8. Order 
+* list all products
+* list today's special deals on the front page
+* let user search product
+* list products by category
+* list product inventory - only available admin
+* let admin refill inventory
 
+* let user create customer account
+* let user create see his profile and order history
+* let admin see all user's information and order history
 
-Unit Test:
-* A good post on ho to simulate RowTest with MS Test
-http://codeclimber.net.nz/archive/2008/01/18/How-to-simulate-RowTest-with-MS-Test.aspx
+* let user add a proudct to cart
+* let user remove a product from cart
+* save the cart so the next time the user comeback, he should see the same cart
+
+* checkout the cart, convert into order
+* charge customer's credit card
+* deduct inventory
+* save order info
+* let user cancel order before the order ships
+
+* record all transactions in the system - inventory, order, shipment, credit card charges, etc
+
 

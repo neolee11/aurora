@@ -1,4 +1,6 @@
-﻿namespace Domain.Shopping.Shipping
+﻿using Aurora.Core.Contracts.Shopping;
+
+namespace Aurora.Engine.Shipping
 {
     public class OvernightShipping : IShippingMethod
     {

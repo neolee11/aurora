@@ -1,4 +1,5 @@
 ﻿using System;
+using Domain.Shopping.Shipping;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain.Shopping;
 
@@ -11,7 +12,7 @@ namespace Domain.Tests.Shopping_Tests.ShoppingManager_Tests
         public void Check_out_should_be_successful()
         {
             var customer = Mother.GetCustomer1();
-            var manager = new ShoppingManager(customer);
+            var manager = new ShoppingService(customer);
             var shoppingCart = manager.ShoppingCart;
             shoppingCart.Add(Mother.GetProduct1(), 2);
             shoppingCart.Add(Mother.GetProduct2(), 3);

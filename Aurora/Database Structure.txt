@@ -1,0 +1,12 @@
+Database Structure:
+Tables:
+1. Customer 
+2. SystemAdmin
+3. Address
+4. CreditCard
+5. CreditCardType
+
+6. Product
+7. Category
+
+8. Order 
