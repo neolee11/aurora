@@ -7,7 +7,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
     [TestClass]
     public class When_Customer_Update_Products_Quantity
     {
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ShoppingCart")]
         public void Set_a_product_quantity_to_0_should_remove_this_product_from_cart()
         {
             var cart = new ShoppingCart();
@@ -20,7 +20,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
             Assert.AreEqual(false, actualResult);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ShoppingCart")]
         public void Set_a_product_quantity_to_a_number_should_make_the_cart_contain_this_number_of_this_product()
         {
             var cart = new ShoppingCart();

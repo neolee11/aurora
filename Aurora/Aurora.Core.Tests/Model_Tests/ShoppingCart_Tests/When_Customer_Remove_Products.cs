@@ -10,7 +10,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
     [TestClass]
     public class When_Customer_Remove_Products
     {
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ShoppingCart")]
         public void Remove_existing_product_should_remove_the_product_from_the_cart()
         {
             var cart = new ShoppingCart();
@@ -22,7 +22,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
             Assert.AreEqual(false, cart.ProductExists(product.Id));
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ShoppingCart")]
         public void Remove_product_from_empty_cart_should_make_the_cart_intact()
         {
             var cart = new ShoppingCart();
@@ -32,7 +32,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
             Assert.AreEqual(0, cart.Items.Count);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ShoppingCart")]
         public void Remove_non_existing_product_should_make_the_cart_intact()
         {
             var cart = new ShoppingCart();

@@ -27,7 +27,7 @@ namespace Aurora.Core.Models.ShoppingModels
         {
             get
             {
-                return Items.Sum(item => item.Product.Price*item.Quantity);
+                return Items.Sum(item => item.Product.RetailPrice*item.Quantity);
             }
         }
 

@@ -25,7 +25,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
             //CollectionAssert.
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ShoppingCart")]
         public void Add_1_product_to_empty_cart_should_make_cart_contain_1_product()
         {
             var emptyShoppingCart = new ShoppingCart();
@@ -36,7 +36,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
             Assert.AreEqual(1, emptyShoppingCart.Items[0].Quantity);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ShoppingCart")]
         public void Add_product_to_cart_that_already_exist_this_product_should_still_make_this_cart_contain_1_purchase_item()
         {
             var cart = new ShoppingCart();
@@ -49,7 +49,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
             Assert.AreEqual(1, cart.Items.Count);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ShoppingCart")]
         public void Add_product_to_cart_that_does_not_have_this_product_should_make_this_cart_contain_2_purchase_items()
         {
             var cart = new ShoppingCart();
@@ -62,7 +62,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
             Assert.AreEqual(2, cart.Items.Count);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ShoppingCart")]
         public void Add_1_product_to_a_cart_containing_the_same_product_should_increment_the_product_count_by_1()
         {
             var cart = new ShoppingCart();
@@ -76,7 +76,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
             Assert.AreEqual(2, productCount);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ShoppingCart")]
         public void Add_product_with_quantity_of_3_should_increment_the_product_count_by_3()
         {
             var cart = new ShoppingCart();
@@ -87,7 +87,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
             Assert.AreEqual(3, productCount);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ShoppingCart")]
         public void Add_product_to_filled_cart_should_increment_the_total_price()
         {
             var cart = new ShoppingCart();
@@ -98,11 +98,11 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
             var newProduct = Mother.GetProduct2();
             cart.Add(newProduct);
 
-            var expectedTotalPrice = existingProduct.Price * 2 + newProduct.Price;
+            var expectedTotalPrice = existingProduct.RetailPrice * 2 + newProduct.RetailPrice;
 
             Assert.AreEqual(expectedTotalPrice, cart.TotalPrice);
         }
-       
+
         [ClassCleanup]
         public static void TearDown()
         {

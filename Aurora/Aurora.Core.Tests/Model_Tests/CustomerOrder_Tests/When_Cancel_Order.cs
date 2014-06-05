@@ -7,7 +7,7 @@ namespace Aurora.Core.Tests.Model_Tests.CustomerOrder_Tests
     [TestClass]
     public class When_Cancel_Order
     {
-        [TestMethod]
+        [TestMethod, TestCategory("Core.CustomerOrder")]
         public void Cancel_order_should_make_order_in_canceled_status()
         {
             CustomerOrder order = Mother.GetCustomerOrder1();
@@ -18,7 +18,7 @@ namespace Aurora.Core.Tests.Model_Tests.CustomerOrder_Tests
             Assert.AreEqual((object) EOrderStatus.Cancelled, order.Status);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Core.CustomerOrder")]
         public void Cancel_completed_order_or_cancelled_order_should_have_no_impact()
         {
             CustomerOrder order = Mother.GetCustomerOrder1();

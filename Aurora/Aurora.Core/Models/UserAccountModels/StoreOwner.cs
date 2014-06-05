@@ -2,9 +2,9 @@
 
 namespace Aurora.Core.Models.UserAccountModels
 {
-    public class SystemAdmin : User
+    public class StoreOwner : User
     {
         public int Id { get; set; }
-        public string AdminEmail { get; set; }
+        public string OwnerEmail { get; set; }
     }
 }

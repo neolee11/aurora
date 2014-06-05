@@ -5,6 +5,6 @@ namespace Aurora.Core.Services
 {
     public class ProductService
     {
-        public List<Product> Products { get; set; }
+        public List<InventoryProduct> Products { get; set; }
     }
 }

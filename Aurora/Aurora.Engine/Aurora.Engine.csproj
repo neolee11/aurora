@@ -43,6 +43,7 @@
     <Compile Include="Shipping\OvernightShipping.cs" />
     <Compile Include="Shipping\StandardShipping.cs" />
     <Compile Include="Shipping\ThreeDayShipping.cs" />
+    <Compile Include="StoreManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aurora.Core\Aurora.Core.csproj">

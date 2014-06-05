@@ -4,7 +4,7 @@ namespace Aurora.Core.Models.ShoppingModels
 {
     public class PurchaseItem
     {
-        public Product Product { get; set; }
+        public InventoryProduct Product { get; set; }
         public int Quantity { get; set; }
 
         public PurchaseItem Clone()

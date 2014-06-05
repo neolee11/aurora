@@ -5,7 +5,7 @@ namespace Aurora.Core.Tests.Services_Tests.ProductService_Tests
     [TestClass]
     public class When_List_Products
     {
-        [TestMethod]
+        [TestMethod, TestCategory("Core.ProductService")]
         public void TestMethod1()
         {
         }

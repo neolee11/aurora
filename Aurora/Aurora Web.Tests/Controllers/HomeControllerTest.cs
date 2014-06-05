@@ -12,7 +12,7 @@ namespace Aurora_Web.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
-        [TestMethod]
+        [TestMethod, TestCategory("Web.HomeController")]
         public void Index()
         {
             // Arrange
@@ -25,7 +25,7 @@ namespace Aurora_Web.Tests.Controllers
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Web.HomeController")]
         public void About()
         {
             // Arrange
@@ -38,7 +38,7 @@ namespace Aurora_Web.Tests.Controllers
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("Web.HomeController")]
         public void Contact()
         {
             // Arrange

@@ -25,7 +25,7 @@ namespace Aurora.Core.Models.ShoppingModels
                 decimal total = 0;
                 foreach (var item in _items)
                 {
-                    total += item.Product.Price * item.Quantity;
+                    total += item.Product.RetailPrice * item.Quantity;
                 }
                 return total;
             }
@@ -38,7 +38,7 @@ namespace Aurora.Core.Models.ShoppingModels
         }
 
         #region Add
-        public void Add(Product product)
+        public void Add(InventoryProduct product)
         {
             var thisProductInCart = _items.SingleOrDefault(p => p.Product.Id == product.Id);
 
@@ -59,7 +59,7 @@ namespace Aurora.Core.Models.ShoppingModels
 
         }
 
-        public void Add(Product product, int quantity)
+        public void Add(InventoryProduct product, int quantity)
         {
             for (var i = 0; i < quantity; i++)
             {

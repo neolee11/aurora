@@ -65,39 +65,39 @@ namespace Aurora.Core.Tests
             };
         }
 
-        public static Product GetProduct1()
+        public static InventoryProduct GetProduct1()
         {
-            return new Product()
+            return new InventoryProduct()
             {
                 Id = 1,
                 Name = "Sony A7",
                 Category = GetCameraCategory(),
                 Description = "Mirrorless Compact Digital Camera",
-                Price = 1599.99m
+                RetailPrice = 1599.99m
             };
         }
 
-        public static Product GetProduct2()
+        public static InventoryProduct GetProduct2()
         {
-            return new Product()
+            return new InventoryProduct()
             {
                 Id = 2,
                 Name = "Lenovo Y400",
                 Category = GetComputerCategory(),
                 Description = "Lenovo Laptop Computer",
-                Price = 899.99m
+                RetailPrice = 899.99m
             };
         }
 
-        public static Product GetProduct3()
+        public static InventoryProduct GetProduct3()
         {
-            return new Product()
+            return new InventoryProduct()
             {
                 Id = 3,
                 Name = "Cisco Phone 7945",
                 Category = GetComputerCategory(),
                 Description = "Cisco IP Phone",
-                Price = 95.00m
+                RetailPrice = 95.00m
             };
         }
 
