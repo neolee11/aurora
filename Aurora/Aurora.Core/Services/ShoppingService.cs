@@ -2,7 +2,7 @@
 using System.Linq;
 using Aurora.Core.Contracts.Shopping;
 using Aurora.Core.Models.ShoppingModels;
-using Aurora.Core.Models.UserModels;
+using Aurora.Core.Models.UserAccountModels;
 
 namespace Aurora.Core.Services
 {

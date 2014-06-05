@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Aurora.Core.Contracts.UserInfo;
+using Aurora.Core.Contracts.UserAccount;
 
-namespace Aurora.Core.Models.UserModels
+namespace Aurora.Core.Models.UserAccountModels
 {
     public class Customer : User
     {

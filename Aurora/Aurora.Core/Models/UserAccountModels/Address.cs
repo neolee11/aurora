@@ -1,4 +1,4 @@
-﻿namespace Aurora.Core.Models.UserModels
+﻿namespace Aurora.Core.Models.UserAccountModels
 {
     public class Address
     {

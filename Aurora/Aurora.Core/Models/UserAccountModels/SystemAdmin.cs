@@ -1,6 +1,6 @@
-﻿using Aurora.Core.Contracts.UserInfo;
+﻿using Aurora.Core.Contracts.UserAccount;
 
-namespace Aurora.Core.Models.UserModels
+namespace Aurora.Core.Models.UserAccountModels
 {
     public class SystemAdmin : User
     {

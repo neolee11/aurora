@@ -1,4 +1,5 @@
-﻿using Aurora.Core.Models.UserModels;
+﻿using Aurora.Core.Models.ShoppingModels;
+using Aurora.Core.Models.UserAccountModels;
 using Aurora.Core.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

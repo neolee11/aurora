@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Aurora.Core.Models.ProductModels;
-using Aurora.Core.Models.ShoppingModels;
 
-namespace Aurora.Core.Services
+namespace Aurora.Core.Models.ShoppingModels
 {
     /// <summary>
     /// </summary>
@@ -70,8 +69,6 @@ namespace Aurora.Core.Services
         }
         #endregion
 
-
-
         #region Remove
         public void Remove(int productId)
         {
@@ -117,8 +114,6 @@ namespace Aurora.Core.Services
             return _items.Count == 0;
         }
         #endregion
-
-
 
     }
 }

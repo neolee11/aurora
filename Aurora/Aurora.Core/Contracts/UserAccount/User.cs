@@ -1,4 +1,4 @@
-﻿namespace Aurora.Core.Contracts.UserInfo
+﻿namespace Aurora.Core.Contracts.UserAccount
 {
     public abstract class User
     {

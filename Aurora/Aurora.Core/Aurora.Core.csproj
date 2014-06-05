@@ -40,19 +40,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\Shopping\IShippingMethod.cs" />
-    <Compile Include="Contracts\UserInfo\User.cs" />
+    <Compile Include="Contracts\UserAccount\User.cs" />
     <Compile Include="Models\ProductModels\Category.cs" />
     <Compile Include="Models\ShoppingModels\CheckOutSetting.cs" />
-    <Compile Include="Services\CustomerOrder.cs" />
+    <Compile Include="Models\ShoppingModels\CustomerOrder.cs" />
     <Compile Include="Models\ShoppingModels\EOrderStatus.cs" />
     <Compile Include="Models\ProductModels\Product.cs" />
     <Compile Include="Models\ShoppingModels\PurchaseItem.cs" />
     <Compile Include="Models\ShoppingModels\ShoppingCart.cs" />
-    <Compile Include="Models\UserModels\Address.cs" />
-    <Compile Include="Models\UserModels\CreditCard.cs" />
-    <Compile Include="Models\UserModels\Customer.cs" />
-    <Compile Include="Models\UserModels\E_CreditCardType.cs" />
-    <Compile Include="Models\UserModels\SystemAdmin.cs" />
+    <Compile Include="Models\UserAccountModels\Address.cs" />
+    <Compile Include="Models\UserAccountModels\CreditCard.cs" />
+    <Compile Include="Models\UserAccountModels\Customer.cs" />
+    <Compile Include="Models\UserAccountModels\E_CreditCardType.cs" />
+    <Compile Include="Models\UserAccountModels\SystemAdmin.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ShoppingService.cs" />
