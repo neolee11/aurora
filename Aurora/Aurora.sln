@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aurora.Web", "Aurora Web\Aurora.Web.csproj", "{673B4A8D-15C9-4D34-9E29-1E2670A5FF4D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aurora.Web.Tests", "Aurora Web.Tests\Aurora.Web.Tests.csproj", "{91674A5E-6AAC-4BFC-8154-1FB3F67422DC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D2909D0F-4452-4C4B-BA1B-BA61C97FB26A}"
 	ProjectSection(SolutionItems) = preProject
 		Database Structure.txt = Database Structure.txt
@@ -42,14 +38,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{673B4A8D-15C9-4D34-9E29-1E2670A5FF4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{673B4A8D-15C9-4D34-9E29-1E2670A5FF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{673B4A8D-15C9-4D34-9E29-1E2670A5FF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{673B4A8D-15C9-4D34-9E29-1E2670A5FF4D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91674A5E-6AAC-4BFC-8154-1FB3F67422DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91674A5E-6AAC-4BFC-8154-1FB3F67422DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{91674A5E-6AAC-4BFC-8154-1FB3F67422DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91674A5E-6AAC-4BFC-8154-1FB3F67422DC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{348568B6-DA0A-483E-8741-17DD8554E7CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{348568B6-DA0A-483E-8741-17DD8554E7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{348568B6-DA0A-483E-8741-17DD8554E7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -71,8 +59,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{673B4A8D-15C9-4D34-9E29-1E2670A5FF4D} = {0380D295-3062-4301-8A74-EDFB2B8CD8F5}
-		{91674A5E-6AAC-4BFC-8154-1FB3F67422DC} = {C946D03C-15AC-4F84-820B-D0BE08FFD106}
 		{348568B6-DA0A-483E-8741-17DD8554E7CF} = {93788511-9E34-4C89-9FE9-43AD817611C5}
 		{394E1F9F-98FC-4DCB-9FA3-9F899C88E8D6} = {5D91558F-A1DA-47AE-B374-3635974296FC}
 		{C946D03C-15AC-4F84-820B-D0BE08FFD106} = {BA064DC0-D21F-47A1-A3A1-8A8FF3E14466}
