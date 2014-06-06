@@ -1,13 +1,13 @@
 ﻿namespace Aurora.Core.Models.ProductModels
 {
-    public class Category
+    public class ProductCategory
     {
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public Category Clone()
+        public ProductCategory Clone()
         {
-            return new Category() { Id = Id, Name = Name };
+            return new ProductCategory() { Id = Id, Name = Name };
         }
     }
 }

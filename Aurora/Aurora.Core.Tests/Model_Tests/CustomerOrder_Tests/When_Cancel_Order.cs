@@ -1,5 +1,5 @@
 ﻿using Aurora.Core.Models.ShoppingModels;
-using Aurora.Core.Services;
+using Aurora.Core.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Aurora.Core.Tests.Model_Tests.CustomerOrder_Tests
@@ -10,7 +10,7 @@ namespace Aurora.Core.Tests.Model_Tests.CustomerOrder_Tests
         [TestMethod, TestCategory("Core.CustomerOrder")]
         public void Cancel_order_should_make_order_in_canceled_status()
         {
-            CustomerOrder order = Mother.GetCustomerOrder1();
+            TestCustomerOrder order = Mother.GetCustomerOrder1();
 
             order.Process();
             order.Cancel();
@@ -21,7 +21,7 @@ namespace Aurora.Core.Tests.Model_Tests.CustomerOrder_Tests
         [TestMethod, TestCategory("Core.CustomerOrder")]
         public void Cancel_completed_order_or_cancelled_order_should_have_no_impact()
         {
-            CustomerOrder order = Mother.GetCustomerOrder1();
+            TestCustomerOrder order = Mother.GetCustomerOrder1();
             order.Process();
             order.Ship();
 

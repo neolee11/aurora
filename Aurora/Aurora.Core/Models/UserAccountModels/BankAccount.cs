@@ -1,17 +1,12 @@
-﻿using Aurora.Core.Contracts.Business;
+using Aurora.Core.Contracts.Business;
+
 namespace Aurora.Core.Models.UserAccountModels
 {
-    public class CreditCard : IPaymentMethod
+    public class BankAccount : IPaymentMethod
     {
-        public int Id { get; set; }
-        public string Number { get; set; }
-        public E_CreditCardType CardType { get; set; }
+        public string BankName { get; set; }
+        public string AccountNumber { get; set; }
         public decimal TotalChargedAmount { get; set; }
-
-        public string PaymentName()
-        {
-            return string.Format("{0} - {1}", CardType.ToString(), Number);
-        }
 
         public bool Charge(decimal amount)
         {
@@ -31,6 +26,11 @@ namespace Aurora.Core.Models.UserAccountModels
                 return true;
             }
             return false;
+        }
+
+        public string PaymentName()
+        {
+            return string.Format("{0} - {1}", BankName, AccountNumber);
         }
     }
 }

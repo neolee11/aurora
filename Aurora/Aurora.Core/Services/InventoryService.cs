@@ -1,4 +1,4 @@
-namespace Aurora.Core.Services
+namespace Aurora.Core.Exceptions
 {
     public class InventoryService
     {

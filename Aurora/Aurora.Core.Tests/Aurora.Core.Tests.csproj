@@ -73,11 +73,6 @@
       <Name>Aurora.Engine</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model_Tests\ShoppingCart_Tests\TestData.xml">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

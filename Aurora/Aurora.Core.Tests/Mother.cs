@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using Aurora.Core.Models.ProductModels;
 using Aurora.Core.Models.ShoppingModels;
 using Aurora.Core.Models.UserAccountModels;
-using Aurora.Core.Services;
+using Aurora.Core.Exceptions;
 using Aurora.Engine.Shipping;
 
 namespace Aurora.Core.Tests
 {
     public static class Mother
     {
-        public static Customer GetCustomer1()
+        public static RegularCustomer GetCustomer1()
         {
-            return new Customer
+            return new RegularCustomer
             {
                 Id = 1,
                 FirstName = "Thomas",
                 LastName = "Li",
                 Username = "tomli",
                 DateJoined = new DateTime(2014, 5, 1),
-                IsMarried = true,
+                IsStudent = true,
                 ShippingAddress = Get1Address(),
                 CreditCards = GetCreditCards()
             };
@@ -101,34 +101,34 @@ namespace Aurora.Core.Tests
             };
         }
 
-        public static Category GetCameraCategory()
+        public static ProductCategory GetCameraCategory()
         {
-            return new Category()
+            return new ProductCategory()
             {
                 Id = 1,
                 Name = "Camera"
             };
         }
 
-        public static Category GetComputerCategory()
+        public static ProductCategory GetComputerCategory()
         {
-            return new Category()
+            return new ProductCategory()
             {
                 Id = 2,
                 Name = "Computer"
             };
         }
 
-        public static Category GetPhoneCategory()
+        public static ProductCategory GetPhoneCategory()
         {
-            return new Category()
+            return new ProductCategory()
             {
                 Id = 3,
                 Name = "Phone"
             };
         }
 
-        public static  CustomerOrder GetCustomerOrder1()
+        public static  TestCustomerOrder GetCustomerOrder1()
         {
             var cart = new ShoppingCart();
             cart.Add(Mother.GetProduct1(), 3);
@@ -137,7 +137,7 @@ namespace Aurora.Core.Tests
             var buyer = Mother.GetCustomer1();
             var shippingMethod = new StandardShipping();
 
-            return new CustomerOrder(
+            return new TestCustomerOrder(
                 cart.Items,
                 shippingMethod,
                 buyer,

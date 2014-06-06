@@ -1,5 +1,5 @@
 ﻿using Aurora.Core.Models.ShoppingModels;
-using Aurora.Core.Services;
+using Aurora.Core.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests

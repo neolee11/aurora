@@ -39,26 +39,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\Shopping\IShippingMethod.cs" />
-    <Compile Include="Contracts\UserAccount\User.cs" />
-    <Compile Include="Models\ProductModels\Category.cs" />
+    <Compile Include="Contracts\Business\IPurchaseItemList.cs" />
+    <Compile Include="Contracts\Business\IShippingMethod.cs" />
+    <Compile Include="Contracts\Business\SystemUser.cs" />
+    <Compile Include="Models\FinanceModels\StoreFinance.cs" />
+    <Compile Include="Models\ProductModels\ProductCategory.cs" />
     <Compile Include="Models\ProductModels\MarketProduct.cs" />
-    <Compile Include="Models\ProductModels\ProductBase.cs" />
+    <Compile Include="Contracts\Business\ProductBase.cs" />
     <Compile Include="Models\ShoppingModels\CheckOutSetting.cs" />
     <Compile Include="Models\ShoppingModels\CustomerOrder.cs" />
     <Compile Include="Models\ShoppingModels\EOrderStatus.cs" />
     <Compile Include="Models\ProductModels\InventoryProduct.cs" />
     <Compile Include="Models\ShoppingModels\PurchaseItem.cs" />
     <Compile Include="Models\ShoppingModels\ShoppingCart.cs" />
+    <Compile Include="Models\ShoppingModels\TestCustomerOrder.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\UserAccountModels\Address.cs" />
+    <Compile Include="Models\UserAccountModels\BankAccount.cs" />
     <Compile Include="Models\UserAccountModels\CreditCard.cs" />
-    <Compile Include="Models\UserAccountModels\Customer.cs" />
+    <Compile Include="Models\UserAccountModels\PrimeCustomer.cs" />
     <Compile Include="Models\UserAccountModels\E_CreditCardType.cs" />
+    <Compile Include="Contracts\Business\CustomerBase.cs" />
+    <Compile Include="Models\UserAccountModels\RegularCustomer.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\UserAccountModels\StoreOwner.cs" />
+    <Compile Include="Services\CustomerOrderService.cs" />
     <Compile Include="Services\InventoryService.cs" />
+    <Compile Include="Contracts\Business\IPayment.cs" />
+    <Compile Include="Services\PaymentMethodFactory.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ShoppingService.cs" />
+    <Compile Include="Services\CheckoutService.cs" />
+    <Compile Include="Exceptions\ShippedOrderCanNotBeCancelledException.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\Repository\" />

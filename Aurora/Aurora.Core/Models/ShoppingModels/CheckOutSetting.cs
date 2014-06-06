@@ -1,4 +1,4 @@
-﻿using Aurora.Core.Contracts.Shopping;
+﻿using Aurora.Core.Contracts.Business;
 
 namespace Aurora.Core.Models.ShoppingModels
 {

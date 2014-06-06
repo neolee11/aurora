@@ -1,5 +1,5 @@
 ﻿using Aurora.Core.Models.ShoppingModels;
-using Aurora.Core.Services;
+using Aurora.Core.Exceptions;
 using Aurora.Engine.Shipping;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -18,7 +18,7 @@ namespace Aurora.Core.Tests.Model_Tests.CustomerOrder_Tests
 
             var buyer = Mother.GetCustomer1();
 
-            var order = new CustomerOrder(
+            var order = new TestCustomerOrder(
                 cart.Items,
                 new StandardShipping(),
                 buyer,

@@ -1,16 +1,17 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
-using Aurora.Core.Contracts.Shopping;
+using Aurora.Core.Contracts.Business;
 using Aurora.Core.Models.ShoppingModels;
 using Aurora.Core.Models.UserAccountModels;
 
-namespace Aurora.Core.Services
+namespace Aurora.Core.Exceptions
 {
-    public class ShoppingService
+    public class CheckoutService
     {
-        #region Private Members
+        #region Private Fields
         private ShoppingCart _shoppingCart;
-        private Customer _customer;
+        private CustomerBase _customer;
         private CreditCard _chargingCreditCard;
         private IShippingMethod _shippingMethod;
         #endregion
@@ -25,7 +26,7 @@ namespace Aurora.Core.Services
             }
         }
 
-        public Customer Customer
+        public CustomerBase Customer
         {
             get
             {
@@ -35,11 +36,17 @@ namespace Aurora.Core.Services
 
         #endregion
 
-        public ShoppingService(Customer customer)
+        #region Contructors
+
+        public CheckoutService(CustomerBase customer)
         {
             _customer = customer;
             _shoppingCart = new ShoppingCart();
         }
+
+        #endregion
+
+        #region Public APIs
 
         public bool CheckOut(CheckOutSetting checkoutSetting)
         {
@@ -54,7 +61,7 @@ namespace Aurora.Core.Services
 
                 SetShippingMethod(checkoutSetting.ShippingMethod);
 
-                var order = new CustomerOrder(
+                var order = new TestCustomerOrder(
                     _shoppingCart.Items,
                     _shippingMethod,
                     _customer,
@@ -69,6 +76,10 @@ namespace Aurora.Core.Services
                 throw ex;
             }
         }
+
+        #endregion
+
+        #region Private Methods
 
         private bool SetPayingCreditCard(int creditCardId)
         {
@@ -85,5 +96,6 @@ namespace Aurora.Core.Services
             _shippingMethod = shippingMethod;
         }
 
+        #endregion
     }
 }

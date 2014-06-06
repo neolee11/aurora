@@ -1,4 +1,4 @@
-﻿using Aurora.Core.Contracts.Shopping;
+﻿using Aurora.Core.Contracts.Business;
 
 namespace Aurora.Engine.Shipping
 {
@@ -9,6 +9,11 @@ namespace Aurora.Engine.Shipping
         public decimal CalculatePrice()
         {
             return Rate;
+        }
+
+        public string MethodName()
+        {
+            return "OVERNIGHT SHIPPING";
         }
     }
 }

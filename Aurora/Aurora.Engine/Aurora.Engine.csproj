@@ -43,13 +43,16 @@
     <Compile Include="Shipping\OvernightShipping.cs" />
     <Compile Include="Shipping\StandardShipping.cs" />
     <Compile Include="Shipping\ThreeDayShipping.cs" />
-    <Compile Include="StoreManager.cs" />
+    <Compile Include="ShoppingManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aurora.Core\Aurora.Core.csproj">
       <Project>{348568B6-DA0A-483E-8741-17DD8554E7CF}</Project>
       <Name>Aurora.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

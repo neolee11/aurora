@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aurora.Engine
 {
-    public class StoreManager
+    public class ShoppingManager
     {
     }
 }

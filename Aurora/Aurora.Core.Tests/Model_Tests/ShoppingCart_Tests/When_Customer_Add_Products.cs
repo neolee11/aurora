@@ -1,6 +1,6 @@
 ﻿using Aurora.Core.Models.ShoppingModels;
 using Aurora.Core.Models.UserAccountModels;
-using Aurora.Core.Services;
+using Aurora.Core.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
@@ -8,21 +8,12 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
     [TestClass]
     public class When_Customer_Add_Products
     {
-        private Customer _customer;
+        private RegularCustomer _customer;
 
         [TestInitialize]
         public void SetupTest()
         {
             _customer = Mother.GetCustomer1();
-        }
-
-        //[ExpectedException]
-        //[DeploymentItem("")]
-        //[DataSource()]
-        public void Then()
-        {
-            //StringAssert.
-            //CollectionAssert.
         }
 
         [TestMethod, TestCategory("Core.ShoppingCart")]
@@ -100,7 +91,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
 
             var expectedTotalPrice = existingProduct.RetailPrice * 2 + newProduct.RetailPrice;
 
-            Assert.AreEqual(expectedTotalPrice, cart.TotalPrice);
+            Assert.AreEqual(expectedTotalPrice, cart.GetTotalPrice());
         }
 
         [ClassCleanup]

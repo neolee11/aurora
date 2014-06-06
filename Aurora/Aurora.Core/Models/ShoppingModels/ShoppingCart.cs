@@ -1,46 +1,31 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Aurora.Core.Models.ProductModels;
+using Aurora.Core.Contracts.Business;
 
 namespace Aurora.Core.Models.ShoppingModels
 {
     /// <summary>
     /// </summary>
-    public class ShoppingCart
+    public class ShoppingCart : IPurchaseItemList
     {
         #region Properties
-        private List<PurchaseItem> _items;
-        public List<PurchaseItem> Items
-        {
-            get
-            {
-                return _items;
-            }
-        }
-
-        public decimal TotalPrice
-        {
-            get
-            {
-                decimal total = 0;
-                foreach (var item in _items)
-                {
-                    total += item.Product.RetailPrice * item.Quantity;
-                }
-                return total;
-            }
-        }
+        public List<PurchaseItem> Items { get; set; }
         #endregion
+
+        #region Constructor
 
         public ShoppingCart()
         {
-            _items = new List<PurchaseItem>();
+            Items = new List<PurchaseItem>();
         }
+
+        #endregion
 
         #region Add
         public void Add(InventoryProduct product)
         {
-            var thisProductInCart = _items.SingleOrDefault(p => p.Product.Id == product.Id);
+            var thisProductInCart = Items.SingleOrDefault(p => p.Product.Id == product.Id);
 
             if (thisProductInCart == null)
             {
@@ -49,14 +34,13 @@ namespace Aurora.Core.Models.ShoppingModels
                     Product = product,
                     Quantity = 1
                 };
-                
-                _items.Add(purchaseItem);
+
+                Items.Add(purchaseItem);
             }
             else
             {
                 thisProductInCart.Quantity++;
             }
-
         }
 
         public void Add(InventoryProduct product, int quantity)
@@ -64,7 +48,6 @@ namespace Aurora.Core.Models.ShoppingModels
             for (var i = 0; i < quantity; i++)
             {
                 Add(product);
-
             }
         }
         #endregion
@@ -72,21 +55,20 @@ namespace Aurora.Core.Models.ShoppingModels
         #region Remove
         public void Remove(int productId)
         {
-            if (ProductExists(productId) == false)
+            if (Exists(productId) == false)
                 return;
 
-            _items.Remove(_items.Where(i => i.Product.Id == productId).Single());
+            Items.Remove(Items.Single(i => i.Product.Id == productId));
         }
-
         #endregion
 
         #region Update
         public void UpdateProductQuantity(int productId, int quantity)
         {
-            if (ProductExists(productId) == false || quantity < 0)
+            if (Exists(productId) == false || quantity < 0)
                 return;
 
-            var productItem = _items.Where(i => i.Product.Id == productId).Single();
+            var productItem = Items.Single(i => i.Product.Id == productId);
 
             if (quantity == 0)
                 Remove(productId);
@@ -96,24 +78,28 @@ namespace Aurora.Core.Models.ShoppingModels
         #endregion
 
         #region Information
-        public bool ProductExists(int productId)
+        public decimal GetTotalPrice()
         {
-            return _items.Exists(p => p.Product.Id == productId);
+            return Items.Sum(item => item.Product.RetailPrice * item.Quantity);
         }
 
         public int GetProductQuantity(int productId)
         {
-            if (ProductExists(productId) == false)
-                return 0;
+             if (Exists(productId) == false)
+                 return 0;
 
-            return _items.Where(i => i.Product.Id == productId).Single().Quantity;
+             return Items.Single(i => i.Product.Id == productId).Quantity;
+        }
+
+        public bool Exists(int productId)
+        {
+            return Items.Exists(p => p.Product.Id == productId);
         }
 
         public bool IsEmpty()
         {
-            return _items.Count == 0;
+            return Items.Count == 0;
         }
         #endregion
-
     }
 }
