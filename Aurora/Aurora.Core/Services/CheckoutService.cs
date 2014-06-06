@@ -7,95 +7,95 @@ using Aurora.Core.Models.UserAccountModels;
 
 namespace Aurora.Core.Exceptions
 {
-    public class CheckoutService
-    {
-        #region Private Fields
-        private ShoppingCart _shoppingCart;
-        private CustomerBase _customer;
-        private CreditCard _chargingCreditCard;
-        private IShippingMethod _shippingMethod;
-        #endregion
+    //public class CheckoutService
+    //{
+    //    #region Private Fields
+    //    private ShoppingCart _shoppingCart;
+    //    private CustomerBase _customer;
+    //    private CreditCard _chargingCreditCard;
+    //    private IShippingMethod _shippingMethod;
+    //    #endregion
 
-        #region Properties
+    //    #region Properties
 
-        public ShoppingCart ShoppingCart
-        {
-            get
-            {
-                return _shoppingCart;
-            }
-        }
+    //    public ShoppingCart ShoppingCart
+    //    {
+    //        get
+    //        {
+    //            return _shoppingCart;
+    //        }
+    //    }
 
-        public CustomerBase Customer
-        {
-            get
-            {
-                return _customer;
-            }
-        }
+    //    public CustomerBase Customer
+    //    {
+    //        get
+    //        {
+    //            return _customer;
+    //        }
+    //    }
 
-        #endregion
+    //    #endregion
 
-        #region Contructors
+    //    #region Contructors
 
-        public CheckoutService(CustomerBase customer)
-        {
-            _customer = customer;
-            _shoppingCart = new ShoppingCart();
-        }
+    //    public CheckoutService(CustomerBase customer)
+    //    {
+    //        _customer = customer;
+    //        _shoppingCart = new ShoppingCart();
+    //    }
 
-        #endregion
+    //    #endregion
 
-        #region Public APIs
+    //    #region Public APIs
 
-        public bool CheckOut(CheckOutSetting checkoutSetting)
-        {
-            try
-            {
-                if (_shoppingCart.IsEmpty())
-                    return false;
+    //    public bool CheckOut(CheckOutSetting checkoutSetting)
+    //    {
+    //        try
+    //        {
+    //            if (_shoppingCart.IsEmpty())
+    //                return false;
 
-                if (SetPayingCreditCard(checkoutSetting.CreditCardId) == false)
-                    return false;
+    //            if (SetPayingCreditCard(checkoutSetting.CreditCardId) == false)
+    //                return false;
 
 
-                SetShippingMethod(checkoutSetting.ShippingMethod);
+    //            SetShippingMethod(checkoutSetting.ShippingMethod);
 
-                var order = new TestCustomerOrder(
-                    _shoppingCart.Items,
-                    _shippingMethod,
-                    _customer,
-                    _chargingCreditCard
-                    );
+    //            var order = new TestCustomerOrder(
+    //                _shoppingCart.Items,
+    //                _shippingMethod,
+    //                _customer,
+    //                _chargingCreditCard
+    //                );
 
-                order.Process();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+    //            order.Process();
+    //            return true;
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            throw ex;
+    //        }
+    //    }
 
-        #endregion
+    //    #endregion
 
-        #region Private Methods
+    //    #region Private Methods
 
-        private bool SetPayingCreditCard(int creditCardId)
-        {
-            _chargingCreditCard = _customer.CreditCards.Where(c => c.Id == creditCardId).SingleOrDefault();
+    //    private bool SetPayingCreditCard(int creditCardId)
+    //    {
+    //        _chargingCreditCard = _customer.CreditCards.Where(c => c.Id == creditCardId).SingleOrDefault();
 
-            if (_chargingCreditCard == null)
-                return false;
-            else
-                return true;
-        }
+    //        if (_chargingCreditCard == null)
+    //            return false;
+    //        else
+    //            return true;
+    //    }
 
-        private void SetShippingMethod(IShippingMethod shippingMethod)
-        {
-            _shippingMethod = shippingMethod;
-        }
+    //    private void SetShippingMethod(IShippingMethod shippingMethod)
+    //    {
+    //        _shippingMethod = shippingMethod;
+    //    }
 
-        #endregion
-    }
+    //    #endregion
+    //}
 }

@@ -39,7 +39,8 @@ namespace Aurora.Core.Tests
             {
                 Id = 1,
                 Number = "012345",
-                CardType = E_CreditCardType.Visa
+                CardType = ECreditCardType.Visa,
+                TotalChargedAmount = 1000
             };
         }
 
@@ -49,7 +50,8 @@ namespace Aurora.Core.Tests
             {
                 Id = 2,
                 Number = "9876512",
-                CardType = E_CreditCardType.Master
+                CardType = ECreditCardType.Master,
+                TotalChargedAmount = 2000
             };
         }
 
@@ -128,21 +130,30 @@ namespace Aurora.Core.Tests
             };
         }
 
-        public static  TestCustomerOrder GetCustomerOrder1()
+        public static CustomerOrder GetCustomerOrderInProcessing1()
         {
             var cart = new ShoppingCart();
-            cart.Add(Mother.GetProduct1(), 3);
-            cart.Add(Mother.GetProduct2(), 2);
+            cart.Add(GetProduct1(), 3);
+            cart.Add(GetProduct2(), 2);
 
-            var buyer = Mother.GetCustomer1();
+            var buyer = GetCustomer1();
             var shippingMethod = new StandardShipping();
+            var paymentMethod = GetCreditCard1();
 
-            return new TestCustomerOrder(
-                cart.Items,
-                shippingMethod,
-                buyer,
-                buyer.CreditCards[0]
-            );
+            return new CustomerOrder
+            {
+                Id = 1,
+                OrderDateTime = System.DateTime.Now.AddDays(1),
+                Items = cart.Items,
+                Customer = buyer,
+                Status = EOrderStatus.Processing,
+                ShippingMethod = shippingMethod.MethodName(),
+                PaymentMethod = paymentMethod.PaymentName(),
+                ProductCost = 200,
+                ShippingCost = shippingMethod.CalculatePrice(),
+                TotalCost = 200 + shippingMethod.CalculatePrice()
+            };
+
         }
     }
 }

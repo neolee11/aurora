@@ -5,7 +5,7 @@ namespace Aurora.Core.Models.UserAccountModels
     {
         public int Id { get; set; }
         public string Number { get; set; }
-        public E_CreditCardType CardType { get; set; }
+        public ECreditCardType CardType { get; set; }
         public decimal TotalChargedAmount { get; set; }
 
         public string PaymentName()

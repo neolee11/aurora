@@ -3,7 +3,7 @@ using Aurora.Core.Models.ProductModels;
 
 namespace Aurora.Core.Exceptions
 {
-    public class ProductService
+    public class InventoryProductService
     {
         public List<InventoryProduct> Products { get; set; }
     }

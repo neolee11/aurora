@@ -19,7 +19,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
 
             cart.Remove(product.Id);
 
-            Assert.AreEqual(false, cart.ProductExists(product.Id));
+            Assert.AreEqual(false, cart.Exists(product.Id));
         }
 
         [TestMethod, TestCategory("Core.ShoppingCart")]

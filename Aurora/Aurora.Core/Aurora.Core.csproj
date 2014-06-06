@@ -59,7 +59,7 @@
     <Compile Include="Models\UserAccountModels\BankAccount.cs" />
     <Compile Include="Models\UserAccountModels\CreditCard.cs" />
     <Compile Include="Models\UserAccountModels\PrimeCustomer.cs" />
-    <Compile Include="Models\UserAccountModels\E_CreditCardType.cs" />
+    <Compile Include="Models\UserAccountModels\ECreditCardType.cs" />
     <Compile Include="Contracts\Business\CustomerBase.cs" />
     <Compile Include="Models\UserAccountModels\RegularCustomer.cs">
       <SubType>Code</SubType>
@@ -69,7 +69,7 @@
     <Compile Include="Services\InventoryService.cs" />
     <Compile Include="Contracts\Business\IPayment.cs" />
     <Compile Include="Services\PaymentMethodFactory.cs" />
-    <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\InventoryProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CheckoutService.cs" />
     <Compile Include="Exceptions\ShippedOrderCanNotBeCancelledException.cs" />

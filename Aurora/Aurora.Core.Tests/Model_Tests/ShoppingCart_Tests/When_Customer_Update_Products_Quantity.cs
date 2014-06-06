@@ -17,7 +17,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
 
             cart.UpdateProductQuantity(product.Id, 0);
 
-            var actualResult = cart.ProductExists(product.Id);
+            var actualResult = cart.Exists(product.Id);
             Assert.AreEqual(false, actualResult);
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace Aurora.Core.Models.UserAccountModels
 {
-    public enum E_CreditCardType
+    public enum ECreditCardType
     {
         Unknown = 0,
         Visa,

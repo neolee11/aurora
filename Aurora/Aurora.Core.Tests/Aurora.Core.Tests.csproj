@@ -50,15 +50,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Model_Tests\CustomerOrder_Tests\When_Cancel_Order.cs" />
-    <Compile Include="Model_Tests\CustomerOrder_Tests\When_Create_Order.cs" />
+    <Compile Include="Services_Tests\CustomerOrderService_Tests\When_Cancel_Order.cs" />
     <Compile Include="Model_Tests\ShoppingCart_Tests\When_Customer_Add_Products.cs" />
     <Compile Include="Model_Tests\ShoppingCart_Tests\When_Customer_Remove_Products.cs" />
     <Compile Include="Model_Tests\ShoppingCart_Tests\When_Customer_Update_Products_Quantity.cs" />
     <Compile Include="Mother.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services_Tests\ProductService_Tests\When_List_Products.cs" />
-    <Compile Include="Services_Tests\ProductService_Tests\When_Search_Products.cs" />
+    <Compile Include="Services_Tests\CustomerOrderService_Tests\When_Create_Order.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Services_Tests\InventoryProductService_Tests\When_List_Products.cs" />
+    <Compile Include="Services_Tests\InventoryProductService_Tests\When_Search_Products.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services_Tests\Shop\" />

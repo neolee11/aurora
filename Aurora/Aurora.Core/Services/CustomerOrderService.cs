@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Aurora.Core.Contracts.Business;
+using Aurora.Core.Exceptions;
 using Aurora.Core.Models.ShoppingModels;
 using Aurora.Core.Models.UserAccountModels;
-using Aurora.Core.Services;
 
-namespace Aurora.Core.Exceptions
+namespace Aurora.Core.Services
 {
     public static class CustomerOrderService
     {
@@ -17,7 +13,14 @@ namespace Aurora.Core.Exceptions
             throw new NotImplementedException();
         }
 
-        public static void CheckoutShoppingCart(IPurchaseItemList purchaseItemList, CustomerBase customer, IPaymentMethod payment, IShippingMethod shippingMethod)
+        /// <summary>
+        /// Check out a shopping cart
+        /// </summary>
+        /// <param name="purchaseItemList"></param>
+        /// <param name="customer"></param>
+        /// <param name="payment"></param>
+        /// <param name="shippingMethod"></param>
+        public static CustomerOrder Checkout(IPurchaseItemList purchaseItemList, CustomerBase customer, IPaymentMethod payment, IShippingMethod shippingMethod)
         {
             var customerOrder = new CustomerOrder();
             customerOrder.OrderDateTime = DateTime.Now;
@@ -27,25 +30,35 @@ namespace Aurora.Core.Exceptions
             customerOrder.ShippingMethod = shippingMethod.MethodName();
             customerOrder.PaymentMethod = payment.PaymentName();
             customerOrder.ProductCost = purchaseItemList.GetTotalPrice();
-            if (customer is PrimeCustomer)
-            {
-                customerOrder.ShippingCost = 0;
-            }
-            else
-            {
-                customerOrder.ShippingCost = shippingMethod.CalculatePrice();
-            }
+            customerOrder.ShippingCost = GetShippingCost(customer, shippingMethod);
             customerOrder.TotalCost = customerOrder.ProductCost + customerOrder.ShippingCost;
 
             payment.Charge(customerOrder.TotalCost);
 
             //todo : persist order 
+
+            return customerOrder;
+        }
+
+        private static decimal GetShippingCost(CustomerBase customer, IShippingMethod shippingMethod)
+        {
+            if (customer is PrimeCustomer)
+            {
+                return 0;
+            }
+            else
+            {
+                return shippingMethod.CalculatePrice();
+            }
         }
 
         public static void ShipOrder(int orderId)
         {
-            var order = GetOrderById(orderId);
+            ShipOrder(GetOrderById(orderId));
+        }
 
+        public static void ShipOrder(CustomerOrder order)
+        {
             order.Status = EOrderStatus.Shipped;
 
             //todo : persist order
@@ -53,7 +66,16 @@ namespace Aurora.Core.Exceptions
 
         public static void CancelOrder(int orderId)
         {
-            var order = GetOrderById(orderId);
+            CancelOrder(GetOrderById(orderId));
+        }
+
+        public static void CancelOrder(CustomerOrder order)
+        {
+            if (order == null)
+            {
+                throw new Exception("Order is not set in CancelOrder method.");
+            }
+
             if (order.Status == EOrderStatus.Shipped)
             {
                 throw new ShippedOrderCanNotBeCancelledException();
@@ -64,11 +86,10 @@ namespace Aurora.Core.Exceptions
                 order.Status = EOrderStatus.Cancelled;
                 //todo: persist order
 
-                var paymentMethod = PaymentMethodFactory.GetPaymentMethod(order.PaymentMethod);
-                paymentMethod.Refund(order.TotalCost);
+                //todo: refund payment
+                //var paymentMethod = PaymentMethodFactory.GetPaymentMethod(order.PaymentMethod);
+                //paymentMethod.Refund(order.TotalCost);
             }
-            
         }
-
     }
 }

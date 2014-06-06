@@ -19,8 +19,8 @@ namespace Aurora.Core.Services
             var method = parts[0].Trim();
             var account = parts[1].Trim();
 
-            E_CreditCardType creditCardType;
-            if (E_CreditCardType.TryParse(method, out creditCardType) == true)
+            ECreditCardType creditCardType;
+            if (ECreditCardType.TryParse(method, out creditCardType) == true)
             {
                 //Lookup credit card
             }

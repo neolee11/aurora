@@ -6,13 +6,12 @@ namespace Aurora.Core.Contracts.Business
 {
     public abstract class CustomerBase : SystemUser
     {
-        int Id { get; set; }
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        Address ShippingAddress { get; set; }
-        bool? IsStudent { get; set; }  //This is to test ? in EF Db creation
-        DateTime DateJoined { get; set; }
-
-        List<CreditCard> CreditCards { get; set; }
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public Address ShippingAddress { get; set; }
+        public bool? IsStudent { get; set; }  //This is to test ? in EF Db creation
+        public DateTime DateJoined { get; set; }
+        public List<CreditCard> CreditCards { get; set; }
     }
 }
