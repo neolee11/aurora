@@ -32,6 +32,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosting", "Hosting", "{0380
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aurora.Core.Tests", "Aurora.Core.Tests\Aurora.Core.Tests.csproj", "{D1CA8896-336C-4900-8983-844B52519D89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aurora.Web", "Aurora.Web\Aurora.Web.csproj", "{EFE4290F-825E-4D15-8E00-045CFA0CED88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{D1CA8896-336C-4900-8983-844B52519D89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1CA8896-336C-4900-8983-844B52519D89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1CA8896-336C-4900-8983-844B52519D89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFE4290F-825E-4D15-8E00-045CFA0CED88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFE4290F-825E-4D15-8E00-045CFA0CED88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFE4290F-825E-4D15-8E00-045CFA0CED88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFE4290F-825E-4D15-8E00-045CFA0CED88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +72,6 @@ Global
 		{7A83EB31-1DE5-465F-AEB3-2EA7C4F94BDE} = {BA064DC0-D21F-47A1-A3A1-8A8FF3E14466}
 		{94166F93-8D8E-49EC-B8E7-5492BA4E8B9A} = {93788511-9E34-4C89-9FE9-43AD817611C5}
 		{D1CA8896-336C-4900-8983-844B52519D89} = {C946D03C-15AC-4F84-820B-D0BE08FFD106}
+		{EFE4290F-825E-4D15-8E00-045CFA0CED88} = {0380D295-3062-4301-8A74-EDFB2B8CD8F5}
 	EndGlobalSection
 EndGlobal
