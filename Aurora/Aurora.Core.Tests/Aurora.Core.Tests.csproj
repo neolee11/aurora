@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Model_Tests\ShoppingCart_Tests\Class1.cs" />
     <Compile Include="Services_Tests\CustomerOrderService_Tests\When_Cancel_Order.cs" />
     <Compile Include="Model_Tests\ShoppingCart_Tests\When_Customer_Add_Products.cs" />
     <Compile Include="Model_Tests\ShoppingCart_Tests\When_Customer_Remove_Products.cs" />
