@@ -74,6 +74,10 @@
       <Project>{94166F93-8D8E-49EC-B8E7-5492BA4E8B9A}</Project>
       <Name>Aurora.Engine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Aurora.TestData\Aurora.TestData.csproj">
+      <Project>{F1C6740F-B3D6-4D7C-A539-B9827C80F330}</Project>
+      <Name>Aurora.TestData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

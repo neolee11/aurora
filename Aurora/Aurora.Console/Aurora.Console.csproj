@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{348568B6-DA0A-483E-8741-17DD8554E7CF}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{4BD78D32-7832-4B97-A339-EB211D690123}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aurora.Core</RootNamespace>
-    <AssemblyName>Aurora.Core</AssemblyName>
+    <RootNamespace>Aurora.Console</RootNamespace>
+    <AssemblyName>Aurora.Console</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -39,36 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\Business\IPurchaseItemList.cs" />
-    <Compile Include="Contracts\Business\IShippingMethod.cs" />
-    <Compile Include="Contracts\Business\SystemUser.cs" />
-    <Compile Include="Models\FinanceModels\StoreFinance.cs" />
-    <Compile Include="Models\ProductModels\ProductCategory.cs" />
-    <Compile Include="Models\ProductModels\MarketProduct.cs" />
-    <Compile Include="Contracts\Business\ProductBase.cs" />
-    <Compile Include="Models\ShoppingModels\CheckOutSetting.cs" />
-    <Compile Include="Models\ShoppingModels\CustomerOrder.cs" />
-    <Compile Include="Models\ShoppingModels\EOrderStatus.cs" />
-    <Compile Include="Models\ProductModels\InventoryProduct.cs" />
-    <Compile Include="Models\ShoppingModels\PurchaseItem.cs" />
-    <Compile Include="Models\ShoppingModels\ShoppingCart.cs" />
-    <Compile Include="Models\UserAccountModels\Address.cs" />
-    <Compile Include="Models\UserAccountModels\BankAccount.cs" />
-    <Compile Include="Models\UserAccountModels\CreditCard.cs" />
-    <Compile Include="Models\UserAccountModels\CustomerMother.cs" />
-    <Compile Include="Models\UserAccountModels\PrimeCustomer.cs" />
-    <Compile Include="Models\UserAccountModels\ECreditCardType.cs" />
-    <Compile Include="Contracts\Business\CustomerBase.cs" />
-    <Compile Include="Models\UserAccountModels\StoreOwner.cs" />
-    <Compile Include="Services\CustomerOrderService.cs" />
-    <Compile Include="Contracts\Business\IPayment.cs" />
-    <Compile Include="Services\PaymentMethodFactory.cs" />
-    <Compile Include="Services\InventoryProductService.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Exceptions\ShippedOrderCanNotBeCancelledException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Contracts\Repository\" />
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

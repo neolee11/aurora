@@ -1,5 +1,6 @@
 ﻿using Aurora.Core.Models.ShoppingModels;
 using Aurora.Core.Exceptions;
+using Aurora.TestData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
@@ -14,7 +15,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
         public void Remove_existing_product_should_remove_the_product_from_the_cart()
         {
             var cart = new ShoppingCart();
-            var product = Mother.GetProduct1();
+            var product = ProductMother.GetProduct1();
             cart.Add(product);
 
             cart.Remove(product.Id);
@@ -27,7 +28,7 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
         {
             var cart = new ShoppingCart();
 
-            cart.Remove(Mother.GetProduct1().Id);
+            cart.Remove(ProductMother.GetProduct1().Id);
 
             Assert.AreEqual(0, cart.Items.Count);
         }
@@ -36,14 +37,15 @@ namespace Aurora.Core.Tests.Model_Tests.ShoppingCart_Tests
         public void Remove_non_existing_product_should_make_the_cart_intact()
         {
             var cart = new ShoppingCart();
-            var prod1 = Mother.GetProduct1();
+            var prod1 = ProductMother.GetProduct1();
             cart.Add(prod1, 2);
-            var prod2 = Mother.GetProduct2();
+            var prod2 = ProductMother.GetProduct2();
             cart.Add(prod2, 4);
 
-            cart.Remove(Mother.GetProduct3().Id);
+            cart.Remove(ProductMother.GetProduct3().Id);
 
             Assert.AreEqual(2, cart.Items.Count);
         }
     }
+
 }

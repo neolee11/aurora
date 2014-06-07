@@ -3,6 +3,7 @@ using Aurora.Core.Models.ShoppingModels;
 using Aurora.Core.Models.UserAccountModels;
 using Aurora.Core.Services;
 using Aurora.Engine.Shipping;
+using Aurora.TestData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Aurora.Core.Tests.Services_Tests.CustomerOrderService_Tests
@@ -15,9 +16,9 @@ namespace Aurora.Core.Tests.Services_Tests.CustomerOrderService_Tests
         public void Create_order_by_giving_shoppingcart_and_customer_and_creditcard_and_shippingmethod_should_yield_a_successful_order()
         {
             IPurchaseItemList shoppingCart = new ShoppingCart();
-            shoppingCart.Add(Mother.GetProduct1(), 3);
-            shoppingCart.Add(Mother.GetProduct2(), 2);
-            CustomerBase customer = Mother.GetCustomer1();
+            shoppingCart.Add(ProductMother.GetProduct1(), 3);
+            shoppingCart.Add(ProductMother.GetProduct2(), 2);
+            CustomerBase customer = CustomerMother.GetCustomer1();
             IPaymentMethod payeMethod = customer.CreditCards[0];
             IShippingMethod shippingMethod = new OvernightShipping();
 
@@ -31,9 +32,9 @@ namespace Aurora.Core.Tests.Services_Tests.CustomerOrderService_Tests
         public void Checkout_shopping_cart_should_yield_an_order_in_processing_state()
         {
             IPurchaseItemList shoppingCart = new ShoppingCart();
-            shoppingCart.Add(Mother.GetProduct1(), 3);
-            shoppingCart.Add(Mother.GetProduct2(), 2);
-            CustomerBase customer = Mother.GetCustomer1();
+            shoppingCart.Add(ProductMother.GetProduct1(), 3);
+            shoppingCart.Add(ProductMother.GetProduct2(), 2);
+            CustomerBase customer = CustomerMother.GetCustomer1();
             IPaymentMethod payeMethod = customer.CreditCards[0];
             IShippingMethod shippingMethod = new OvernightShipping();
 
@@ -46,9 +47,9 @@ namespace Aurora.Core.Tests.Services_Tests.CustomerOrderService_Tests
         public void Process_an_order_should_charge_customer_credit_card()
         {
             IPurchaseItemList shoppingCart = new ShoppingCart();
-            shoppingCart.Add(Mother.GetProduct1(), 3);
-            shoppingCart.Add(Mother.GetProduct2(), 2);
-            CustomerBase customer = Mother.GetCustomer1();
+            shoppingCart.Add(ProductMother.GetProduct1(), 3);
+            shoppingCart.Add(ProductMother.GetProduct2(), 2);
+            CustomerBase customer = CustomerMother.GetCustomer1();
             IPaymentMethod payeMethod = customer.CreditCards[0];
             IShippingMethod shippingMethod = new OvernightShipping();
 
